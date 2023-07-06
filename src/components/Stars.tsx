@@ -1,14 +1,14 @@
 import Star from './Star';
-import type { Count } from './stars';
+import type { Count, Item } from './types';
 
 function Stars({ count }: Count) {
 
-  let list;
+  let list: [];
   const Item: Item = Star;
   if (typeof(count) !== 'number') {
     list = []
   } else if (0 < count && count <= 5) {
-    list = Array(count).fill('');
+    list = Array(count).fill('') as [];
   } else {
     list = [];
   }
@@ -21,5 +21,3 @@ function Stars({ count }: Count) {
 }
 
 export default Stars
-
-type Item = () => JSX.Element;
